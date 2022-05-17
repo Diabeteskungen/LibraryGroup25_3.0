@@ -16,14 +16,19 @@ public class StartpageController {
 
     @FXML
     protected void onLoginButtonClick(ActionEvent event) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginUser.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
 
+        
+       
+    }
 
-
+    public void onAdminButtonClick(ActionEvent actionEvent) {
     }
 }
+
+
 
