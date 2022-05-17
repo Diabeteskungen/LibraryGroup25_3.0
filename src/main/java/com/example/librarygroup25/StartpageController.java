@@ -22,11 +22,17 @@ public class StartpageController {
         stage.setScene(new Scene(root1));
         stage.show();
 
+
         
        
     }
-
-    public void onAdminButtonClick(ActionEvent actionEvent) {
+    @FXML
+    public void onAdminButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginAdmin.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 }
 
