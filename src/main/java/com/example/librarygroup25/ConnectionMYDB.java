@@ -10,6 +10,7 @@ public class ConnectionMYDB {
     private static Statement stmt;
 
 
+
     public static Connection getConnection() {
 
         try {
