@@ -3,12 +3,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.StartpageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.StartpageController">
    <children>
       <AnchorPane prefHeight="110.0" prefWidth="600.0" style="-fx-background-color: #1985DF;" />
       <Label layoutX="282.0" layoutY="182.0" text="Search" />
       <TextField layoutX="226.0" layoutY="200.0" />
-      <Button layoutX="499.0" layoutY="110.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="66.0" prefWidth="101.0" text="Login" />
-      <Button layoutX="499.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAdminButtonClick" prefHeight="66.0" prefWidth="101.0" text="Login Admin" />
+      <Button layoutX="269.0" layoutY="269.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="61.0" text="Login" />
+      <Button layoutX="257.0" layoutY="330.0" mnemonicParsing="false" onAction="#onAdminButtonClick" prefHeight="26.0" prefWidth="86.0" text="Login Admin" />
    </children>
 </AnchorPane>
