@@ -43,6 +43,7 @@ public class LoginAdminController {
                     Stage stage = new Stage();
                     stage.setScene(new Scene(root1));
                     stage.show();
+                    System.out.println("Login Successful");
                 } else {
                     System.out.println("Username or password is wrong");
                 }
