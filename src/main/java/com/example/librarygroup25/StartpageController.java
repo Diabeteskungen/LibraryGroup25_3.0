@@ -22,10 +22,6 @@ public class StartpageController {
         stage.setScene(new Scene(root1));
         stage.show();
         stage.close();
-
-
-        
-       
     }
     @FXML
     public void onAdminButtonClick(ActionEvent event) throws IOException {

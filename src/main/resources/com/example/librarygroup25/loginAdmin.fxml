@@ -4,17 +4,17 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.LoginAdminController">
    <children>
       <AnchorPane prefHeight="110.0" prefWidth="600.0" style="-fx-background-color: #1985DF;">
          <children>
             <ImageView fitHeight="125.0" fitWidth="152.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <TextField layoutX="226.0" layoutY="200.0" />
+      <TextField fx:id="AdminUsernameField" layoutX="226.0" layoutY="200.0" />
       <Label layoutX="226.0" layoutY="183.0" text="Username" />
       <Label layoutX="226.0" layoutY="230.0" text="Password" />
-      <PasswordField layoutX="226.0" layoutY="247.0" />
-      <Button layoutX="273.0" layoutY="294.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="54.0" text="Login" />
+      <PasswordField fx:id="AdminPasswordField" layoutX="226.0" layoutY="247.0" />
+      <Button layoutX="273.0" layoutY="294.0" mnemonicParsing="false" onAction="#onLoginAdminClick" prefHeight="25.0" prefWidth="54.0" text="Login" />
    </children>
 </AnchorPane>

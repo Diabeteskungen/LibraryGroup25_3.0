@@ -18,6 +18,15 @@ public class LoginController {
     @FXML
     private TextField PasswordField;
 
+    @FXML
+    protected void onRegisterClick(ActionEvent event) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("register.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+        stage.close();
+    }
 
     @FXML
     protected void onLoginClick(ActionEvent event) throws Exception {
@@ -58,6 +67,8 @@ public class LoginController {
             }
 
         }
+
+
 
 
 
