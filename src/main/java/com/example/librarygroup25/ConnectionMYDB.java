@@ -19,7 +19,7 @@ public class ConnectionMYDB {
             ex.getCause();//förklarar exakt varför
             ex.printStackTrace();//röd error
             //i varje catch
-            System.out.println("Failed to create fag");
+            System.out.println("Failed to login user, contact system admin");
         }
 
         return con;
