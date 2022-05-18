@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -20,6 +21,9 @@ public class LoginController {
 
     @FXML
     private Label LoginErrorText;
+
+    @FXML
+    private Button buttonLogin;
 
     @FXML
     protected void onRegisterClick(ActionEvent event) throws Exception {
@@ -50,11 +54,14 @@ public class LoginController {
                 resultSet.getString("pwd");
                 pwdFromDB = resultSet.getString("pwd");
                 if (password.equals(pwdFromDB)) {
+                    Stage stage = (Stage) buttonLogin.getScene().getWindow();
+                    stage.close();
                     FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpageUser.fxml"));
                     Parent root1 = (Parent) fxmlLoader.load();
-                    Stage stage = new Stage();
+                    stage = new Stage();
                     stage.setScene(new Scene(root1));
                     stage.show();
+
                 }
 
 

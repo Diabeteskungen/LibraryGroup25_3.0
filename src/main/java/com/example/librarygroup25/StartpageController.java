@@ -5,29 +5,41 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class StartpageController {
+
     @FXML
     private Label stage;
 
     @FXML
+    private Button buttonLogin;
+
+    @FXML
+    private Button buttonAdmin;
+
+    @FXML
     protected void onLoginButtonClick(ActionEvent event) throws Exception {
+        Stage stage = (Stage) buttonLogin.getScene().getWindow();
+        stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginUser.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
+        stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
 
     }
     @FXML
     public void onAdminButtonClick(ActionEvent event) throws IOException {
+        Stage stage = (Stage) buttonAdmin.getScene().getWindow();
+        stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginAdmin.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
+        stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
     }
