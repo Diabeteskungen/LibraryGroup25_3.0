@@ -16,6 +16,8 @@
                 <TableColumn fx:id="id" prefWidth="75.0" text="id" />
             </columns>
         </TableView>
-        <Button fx:id="searchbutton" layoutX="275.0" layoutY="230.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Button" />
+        <Button fx:id="searchbutton" layoutX="275.0" layoutY="230.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
+      <Button fx:id="Additems" layoutX="138.0" layoutY="230.0" mnemonicParsing="false" text="Add Item" />
+      <Button fx:id="DeleteItem" layoutX="419.0" layoutY="230.0" mnemonicParsing="false" text="Delete Item" />
     </children>
 </AnchorPane>
