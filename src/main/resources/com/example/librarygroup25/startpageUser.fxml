@@ -8,7 +8,7 @@
         <AnchorPane prefHeight="110.0" prefWidth="600.0" style="-fx-background-color: #1985DF;" />
         <Label layoutX="282.0" layoutY="182.0" text="Search" />
         <TextField fx:id="searchInput" layoutX="226.0" layoutY="200.0" />
-        <TableView fx:id="searchResult" layoutY="109.0" prefHeight="291.0" prefWidth="600.0" visible="false">
+        <TableView fx:id="searchResult" layoutY="109.0" visible="false">
             <columns>
                 <TableColumn fx:id="title" prefWidth="75.0" text="title" />
                 <TableColumn fx:id="author" prefWidth="75.0" text="author" />
