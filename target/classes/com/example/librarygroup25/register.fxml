@@ -8,14 +8,16 @@
       <AnchorPane prefHeight="110.0" prefWidth="600.0" style="-fx-background-color: #1985DF;" />
       <Label layoutX="117.0" layoutY="210.0" text="Lastname" />
       <Label layoutX="117.0" layoutY="148.0" text="Firstname" />
-      <TextField layoutX="117.0" layoutY="166.0" />
-      <TextField layoutX="117.0" layoutY="228.0" />
-      <TextField layoutX="117.0" layoutY="288.0" />
-      <TextField layoutX="341.0" layoutY="166.0" />
-      <TextField layoutX="341.0" layoutY="228.0" />
+      <TextField fx:id="fNameField" layoutX="117.0" layoutY="166.0" />
+      <TextField fx:id="lNameField" layoutX="117.0" layoutY="228.0" />
+      <TextField fx:id="emailField" layoutX="117.0" layoutY="288.0" />
+      <TextField fx:id="uNameField" layoutX="341.0" layoutY="166.0" />
+      <TextField fx:id="pwdField" layoutX="341.0" layoutY="228.0" />
       <Label layoutX="117.0" layoutY="271.0" text="E-Mail" />
       <Label layoutX="341.0" layoutY="148.0" text="Username" />
       <Label layoutX="341.0" layoutY="210.0" text="Password" />
-      <Button layoutX="428.0" layoutY="287.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Register" />
+      <Button fx:id="registerButton" layoutX="270.0" layoutY="341.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="26.0" prefWidth="61.0" text="Register" />
+      <ComboBox fx:id="uTypeBox" layoutX="341.0" layoutY="288.0" prefWidth="150.0" promptText="Select usertype" />
+      <Label fx:id="registerErrorText" layoutX="197.0" layoutY="399.0" prefHeight="17.0" prefWidth="207.0" />
    </children>
 </AnchorPane>

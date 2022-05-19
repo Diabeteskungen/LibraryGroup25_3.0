@@ -37,6 +37,19 @@ public class Query {
 
     }
 
+    public ResultSet querySix(String query, String variable1, String variable2, String variable3, String variable4, String variable5, String variable6) throws SQLException {
+        callableStatement = conn.prepareCall(query);
+        callableStatement.setString(1, variable1);
+        callableStatement.setString(2, variable2);
+        callableStatement.setString(3, variable3);
+        callableStatement.setString(4, variable4);
+        callableStatement.setString(5, variable5);
+        callableStatement.setString(6, variable6);
+        resultSet = callableStatement.executeQuery();
+
+
+        return resultSet;
+    }
 
 }
 

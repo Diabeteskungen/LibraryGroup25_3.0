@@ -4,5 +4,7 @@
 
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.ReturnBookController">
-
+   <children>
+      <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
+   </children>
 </AnchorPane>

@@ -15,21 +15,22 @@ public class LoginController {
 
     @FXML
     private TextField UsernameField;
-
     @FXML
     private TextField PasswordField;
-
     @FXML
     private Label LoginErrorText;
-
     @FXML
     private Button buttonLogin;
+    @FXML
+    private Button buttonRegister;
 
     @FXML
     protected void onRegisterClick(ActionEvent event) throws Exception {
+        Stage stage = (Stage) buttonRegister.getScene().getWindow();
+        stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("register.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
+        stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
 
@@ -67,7 +68,8 @@ public class LoginController {
 
             }
         }catch(SQLException e){
-                e.printStackTrace();
+            e.printStackTrace();
+            e.getCause();
             }
 
         }
