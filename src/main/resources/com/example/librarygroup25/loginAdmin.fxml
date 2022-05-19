@@ -11,11 +11,11 @@
             <ImageView fitHeight="125.0" fitWidth="152.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
-      <TextField fx:id="AdminEmailField" layoutX="226.0" layoutY="200.0" />
-      <Label layoutX="226.0" layoutY="183.0" text="Email" />
-      <Label layoutX="226.0" layoutY="230.0" text="Password" />
-      <PasswordField fx:id="AdminPasswordField" layoutX="226.0" layoutY="247.0" />
-      <Button fx:id="buttonLogin" layoutX="273.0" layoutY="294.0" mnemonicParsing="false" onAction="#onLoginAdminClick" prefHeight="25.0" prefWidth="54.0" text="Login" />
+      <TextField fx:id="AdminEmailField" layoutX="426.0" layoutY="281.0" />
+      <Label layoutX="426.0" layoutY="264.0" text="Email" />
+      <Label layoutX="428.0" layoutY="323.0" text="Password" />
+      <PasswordField fx:id="AdminPasswordField" layoutX="426.0" layoutY="339.0" />
+      <Button fx:id="buttonLogin" layoutX="473.0" layoutY="390.0" mnemonicParsing="false" onAction="#onLoginAdminClick" prefHeight="25.0" prefWidth="54.0" text="Login" />
       <Label fx:id="LoginErrorText" layoutX="224.0" layoutY="335.0" prefHeight="17.0" prefWidth="152.0" textFill="RED" />
    </children>
 </AnchorPane>
