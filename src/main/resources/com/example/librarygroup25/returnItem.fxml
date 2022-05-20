@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.ReturnItemController">
+   <children>
+      <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
+      <TextField layoutX="426.0" layoutY="288.0" />
+      <Button layoutX="474.0" layoutY="326.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="homeButton" layoutX="951.0" layoutY="140.0" mnemonicParsing="false" onAction="#onHomeButtonPress" text="Home" />
+      <Label layoutX="463.0" layoutY="265.0" text="Enter Barcode" />
+   </children>
+</AnchorPane>
