@@ -31,7 +31,7 @@ public class StartpageAdminController implements Initializable {
     private Button addItemButton;
 
     @FXML
-    private Button deleteItemButton;
+    private Button removeItemButton;
 
     @FXML
     private Button backButton;
@@ -104,7 +104,7 @@ public class StartpageAdminController implements Initializable {
     }
 
     public void openRemoveItem (ActionEvent event) throws IOException {
-        Stage stage = (Stage) addItemButton.getScene().getWindow();
+        Stage stage = (Stage) removeItemButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("removeItem.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -128,7 +128,7 @@ public class StartpageAdminController implements Initializable {
     public void searchbuttonaction(ActionEvent actionEvent) throws Exception {
         search();
         searchbutton.setVisible(false);
-        deleteItemButton.setVisible(false);
+        removeItemButton.setVisible(false);
         addItemButton.setVisible(false);
         backButton.setVisible(true);
 
@@ -138,7 +138,7 @@ public class StartpageAdminController implements Initializable {
         backButton.setVisible(false);
         searchResult.setVisible(false);
         searchbutton.setVisible(true);
-        deleteItemButton.setVisible(true);
+        removeItemButton.setVisible(true);
         addItemButton.setVisible(true);
     }
     public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
