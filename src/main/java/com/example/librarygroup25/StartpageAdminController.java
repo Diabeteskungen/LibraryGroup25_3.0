@@ -28,7 +28,7 @@ public class StartpageAdminController implements Initializable {
     private Button searchbutton;
 
     @FXML
-    public Button addItemButton;
+    private Button addItemButton;
 
     @FXML
     private Button deleteItemButton;
@@ -88,6 +88,16 @@ public class StartpageAdminController implements Initializable {
             e.printStackTrace();
             e.getCause();
         }
+    }
+
+    public void openaddItem (ActionEvent event) throws IOException {
+        Stage stage = (Stage) addItemButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("addItem.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 
     @Override
