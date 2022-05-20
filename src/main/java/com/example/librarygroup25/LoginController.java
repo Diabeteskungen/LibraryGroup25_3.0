@@ -23,6 +23,8 @@ public class LoginController {
     private Button buttonLogin;
     @FXML
     private Button buttonRegister;
+    @FXML
+    private Button homeButton;
 
     @FXML
     protected void onRegisterClick(ActionEvent event) throws Exception {
@@ -34,6 +36,16 @@ public class LoginController {
         stage.setScene(new Scene(root1));
         stage.show();
 
+    }
+
+    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) homeButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 
     @FXML

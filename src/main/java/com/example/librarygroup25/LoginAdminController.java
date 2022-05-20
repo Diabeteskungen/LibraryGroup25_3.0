@@ -26,7 +26,18 @@ public class LoginAdminController {
     @FXML
     private Button buttonLogin;
 
+    @FXML
+    private Button homeButton;
 
+    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) homeButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
 
     @FXML
     protected void onLoginAdminClick(ActionEvent event) throws Exception {
