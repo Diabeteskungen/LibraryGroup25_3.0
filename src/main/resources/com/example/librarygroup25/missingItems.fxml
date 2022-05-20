@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.MissingItemsController">
+    <children>
+        <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
+        <TableView fx:id="missingItemsList" layoutX="-2.0" layoutY="140.0" prefHeight="460.0" prefWidth="950.0">
+            <columns>
+                <TableColumn fx:id="title" prefWidth="165.0" text="title" />
+                <TableColumn fx:id="loanNr" prefWidth="136.0" text="loanNr" />
+                <TableColumn fx:id="user" minWidth="0.0" prefWidth="126.0" text="user" />
+                <TableColumn fx:id="barcode" prefWidth="127.0" text="barcode" />
+            <TableColumn fx:id="dateBorrowed" prefWidth="133.0" text="dateBorrowed" />
+            <TableColumn fx:id="dateOfReturn" minWidth="0.0" prefWidth="129.0" text="dateOfReturn" />
+            <TableColumn fx:id="email" prefWidth="133.0" text="email" />
+            </columns>
+        </TableView>
+        <Button fx:id="updateButton" layoutX="947.0" layoutY="200.0" mnemonicParsing="false" onAction="#onUpdateButton" text="Update" />
+        <Button fx:id="logoutButton" layoutX="946.0" layoutY="140.0" mnemonicParsing="false" onAction="#onLogoutButtonPress" text="Logout" />
+    </children>
+</AnchorPane>

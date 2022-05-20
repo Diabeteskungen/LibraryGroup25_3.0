@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -32,6 +33,9 @@ public class LoginController {
     private Button homeButton;
 
     @FXML
+    private TableView<Items> missingItemsList;
+
+    @FXML
     protected void onRegisterClick(ActionEvent event) throws Exception {
         Stage stage = (Stage) buttonRegister.getScene().getWindow();
         stage.close();
@@ -40,6 +44,8 @@ public class LoginController {
         stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
+
+
     }
 
     public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {

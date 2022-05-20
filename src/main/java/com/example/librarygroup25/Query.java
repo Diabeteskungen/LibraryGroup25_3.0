@@ -5,6 +5,7 @@ public class Query {
     Connection conn;
     CallableStatement callableStatement;
     ResultSet resultSet;
+
     //
     public Query() {
         final String DATABASE_URL = "jdbc:mysql://localhost:3306/library?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC";
@@ -24,6 +25,7 @@ public class Query {
 
         return resultSet;
     }
+
     //
     public ResultSet queryDouble(String query, String variable1, String variable2) throws SQLException {
         callableStatement = conn.prepareCall(query);
@@ -33,6 +35,7 @@ public class Query {
 
         return resultSet;
     }
+
     //
     public ResultSet queryTriple(String query, String variable1, String variable2, String variable3) throws SQLException {
         callableStatement = conn.prepareCall(query);
@@ -43,6 +46,7 @@ public class Query {
 
         return resultSet;
     }
+
     //
     public ResultSet queryFive(String query, String variable1, String variable2, String variable3, String variable4, String variable5) throws SQLException {
         callableStatement = conn.prepareCall(query);
@@ -55,6 +59,7 @@ public class Query {
 
         return resultSet;
     }
+
     //
     public ResultSet querySix(String query, String variable1, String variable2, String variable3, String variable4, String variable5, String variable6) throws SQLException {
         callableStatement = conn.prepareCall(query);
@@ -68,6 +73,14 @@ public class Query {
 
         return resultSet;
     }
+
+    public ResultSet queryZero(String query) throws SQLException {
+        callableStatement = conn.prepareCall(query);
+        resultSet = callableStatement.executeQuery();
+
+        return resultSet;
+    }
+
 }
 
 

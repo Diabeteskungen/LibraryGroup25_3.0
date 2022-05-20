@@ -22,5 +22,6 @@
       <Button fx:id="addItemButton" layoutX="400.0" layoutY="375.0" mnemonicParsing="false" onAction="#openaddItem" prefHeight="25.0" prefWidth="78.0" text="Add Item" />
       <Button fx:id="backButton" layoutY="140.0" mnemonicParsing="false" onAction="#onBackButtonPress" text="Back" visible="false" />
       <Button fx:id="editItemButton" layoutX="397.0" layoutY="427.0" mnemonicParsing="false" onAction="#onEditItemButton" prefHeight="25.0" prefWidth="78.0" text="Edit Item" />
+      <Button fx:id="loanedItemsButton" layoutX="513.0" layoutY="427.0" mnemonicParsing="false" onAction="#onLoanedItemsButtonPress" prefHeight="25.0" prefWidth="103.0" text="Loaned Items" />
     </children>
 </AnchorPane>

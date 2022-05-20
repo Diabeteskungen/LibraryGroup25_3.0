@@ -43,6 +43,9 @@ public class StartpageAdminController implements Initializable {
     private Button editItemButton;
 
     @FXML
+    private Button loanedItemsButton;
+
+    @FXML
     private TextField searchInput;
 
     @FXML
@@ -120,6 +123,16 @@ public class StartpageAdminController implements Initializable {
         Stage stage = (Stage) editItemButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("editItem.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
+
+    public void onLoanedItemsButtonPress (ActionEvent event) throws IOException {
+        Stage stage = (Stage) loanedItemsButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("missingItems.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         stage = new Stage();
         stage.setScene(new Scene(root1));
