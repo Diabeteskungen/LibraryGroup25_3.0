@@ -19,5 +19,6 @@
         <Button fx:id="searchbutton" layoutX="474.0" layoutY="375.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
       <Button fx:id="Additems" layoutX="373.0" layoutY="375.0" mnemonicParsing="false" text="Add Item" />
       <Button fx:id="DeleteItem" layoutX="562.0" layoutY="375.0" mnemonicParsing="false" text="Delete Item" />
+      <Button layoutX="946.0" layoutY="140.0" mnemonicParsing="false" text="Logout" />
     </children>
 </AnchorPane>
