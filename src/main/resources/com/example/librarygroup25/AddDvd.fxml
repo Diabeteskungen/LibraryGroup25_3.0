@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.librarygroup25.AddDvdController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.AddDvdController">
+    <children>
+        <TextField fx:id="ArtNmrfield" layoutX="58.0" layoutY="74.0" />
+        <TextField fx:id="TitleField" layoutX="58.0" layoutY="188.0" />
+        <TextField fx:id="DirectorField" layoutX="364.0" layoutY="74.0" />
+        <TextField fx:id="GenreField" layoutX="364.0" layoutY="188.0" />
+        <TextField fx:id="LocationField" layoutX="364.0" layoutY="303.0" />
+        <Button fx:id="AddDvdButton" layoutX="407.0" layoutY="343.0" mnemonicParsing="false" onAction="#onAddDvdButton" text="Add Dvd" />
+        <Label layoutX="88.0" layoutY="50.0" prefHeight="17.0" prefWidth="90.0" text="Article number" />
+        <Label layoutX="114.0" layoutY="162.0" text="Title" />
+        <Label layoutX="417.0" layoutY="49.0" text="Director" />
+        <Label layoutX="425.0" layoutY="162.0" text="Genre" />
+        <Label layoutX="425.0" layoutY="280.0" text="Location" />
+        <Label fx:id="addDvdErrorText" layoutX="262.0" layoutY="360.0" />
+    </children>
 </AnchorPane>
