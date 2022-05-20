@@ -99,13 +99,18 @@ public class LoanController {
                     {
                         RecieptText.setText("A recipt has been sent to " + emailrecipt + " containing the following information:\n\nTitle: " +
                                 titlerecipt + "\nBarcode: " + barcoderecipt + "\nBorrowed Date: " + borrowedDaterecipt + "\nLast Return Date: " + lastReturnDaterecipt);
+                        loanBookErrorText.setText("");
                         RecieptFrame.setVisible(true);
                         closeReceiptButton.setVisible(true);
 
                     }
 
+                    }
+
 
                 }
+            else {
+                loanBookErrorText.setText("Boken är redan utlånad.");
 
             }
             } catch(SQLException e){
