@@ -3,18 +3,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.AddBook">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.AddBookController">
    <children>
-      <TextField layoutX="58.0" layoutY="74.0" />
-      <TextField layoutX="58.0" layoutY="188.0" />
-      <TextField layoutX="58.0" layoutY="303.0" />
-      <TextField layoutX="364.0" layoutY="74.0" />
-      <TextField layoutX="364.0" layoutY="188.0" />
-      <Button layoutX="413.0" layoutY="303.0" mnemonicParsing="false" text="Add Book" />
+      <TextField fx:id="ISBNfield" layoutX="58.0" layoutY="74.0" />
+      <TextField fx:id="TitleField" layoutX="58.0" layoutY="188.0" />
+      <TextField fx:id="AuthorField" layoutX="58.0" layoutY="303.0" />
+      <TextField fx:id="PublisherField" layoutX="364.0" layoutY="74.0" />
+      <TextField fx:id="GenreField" layoutX="364.0" layoutY="188.0" />
+      <Button fx:id="AddBookButton" layoutX="407.0" layoutY="343.0" mnemonicParsing="false" onAction="#onAddBookButton" text="Add Book" />
       <Label layoutX="99.0" layoutY="49.0" prefHeight="17.0" prefWidth="58.0" text="     ISBN" />
       <Label layoutX="114.0" layoutY="162.0" text="Title" />
       <Label layoutX="114.0" layoutY="280.0" text="Author" />
       <Label layoutX="417.0" layoutY="49.0" text="Publisher" />
       <Label layoutX="425.0" layoutY="162.0" text="Genre" />
+      <TextField fx:id="LocationField" layoutX="367.0" layoutY="303.0" />
+      <Label layoutX="425.0" layoutY="280.0" text="Location" />
+      <Label fx:id="addBookErrorText" layoutX="272.0" layoutY="360.0" textFill="#eb0404" />
    </children>
 </AnchorPane>
