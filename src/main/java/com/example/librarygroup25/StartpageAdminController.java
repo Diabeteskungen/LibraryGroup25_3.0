@@ -23,8 +23,18 @@ import java.util.ResourceBundle;
 public class StartpageAdminController implements Initializable {
 
 
+
     @FXML
-    private Label stage;
+    private Button searchbutton;
+
+    @FXML
+    public Button addItemButton;
+
+    @FXML
+    private Button deleteItemButton;
+
+    @FXML
+    private Button backButton;
 
     @FXML
     private TextField searchInput;
@@ -46,10 +56,14 @@ public class StartpageAdminController implements Initializable {
 
     public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList();
 
+    public StartpageAdminController() {
+    }
+
 
     protected void search () throws Exception {
 
         Query query = new Query();
+        itemsinDB.clear();
         String checkBookExist = ("{ CALL spFindBook (?) }");
         String checkDvdExist = ("{ CALL spFindDvd (?) }");
         String searchInputText = searchInput.getText();
@@ -90,6 +104,19 @@ public class StartpageAdminController implements Initializable {
 
     public void searchbuttonaction(ActionEvent actionEvent) throws Exception {
         search();
+        searchbutton.setVisible(false);
+        deleteItemButton.setVisible(false);
+        addItemButton.setVisible(false);
+        backButton.setVisible(true);
+
+    }
+
+    public void onBackButtonPress(ActionEvent actionEvent) throws Exception {
+        backButton.setVisible(false);
+        searchResult.setVisible(false);
+        searchbutton.setVisible(true);
+        deleteItemButton.setVisible(true);
+        addItemButton.setVisible(true);
     }
 }
 

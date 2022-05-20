@@ -68,7 +68,7 @@ public class RegisterController implements Initializable {
             String registerUser = ("{ CALL spRegisterUser(?, ?, ?, ?, ? ,?) }");
             String[] UserInfo = getUser();
             ResultSet resultSet;
-            if (checkEmptyFields(UserInfo) == true) {
+            if (checkEmptyFields(UserInfo)) {
                 Query query = new Query();
                 String[] actualUserInfo = getUser();
                 try {

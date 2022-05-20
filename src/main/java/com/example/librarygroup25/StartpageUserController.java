@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -22,8 +19,11 @@ public class StartpageUserController implements Initializable {
     @FXML
     private Label stage;
 
+    @FXML
+    private Button backButton;
 
-
+    @FXML
+    private Button searchbutton;
 
     @FXML
     private TextField searchInput;
@@ -49,6 +49,7 @@ public class StartpageUserController implements Initializable {
     protected void search () throws Exception {
 
         Query query = new Query();
+        itemsinDB.clear();
         String checkBookExist = ("{ CALL spFindBook (?) }");
         String checkDvdExist = ("{ CALL spFindDvd (?) }");
         String searchInputText = searchInput.getText();
@@ -94,5 +95,14 @@ public class StartpageUserController implements Initializable {
 
     public void searchbuttonaction(ActionEvent actionEvent) throws Exception {
         search();
+        searchbutton.setVisible(false);
+        backButton.setVisible(true);
+
+    }
+
+    public void onBackButtonPress(ActionEvent actionEvent) throws Exception {
+        backButton.setVisible(false);
+        searchResult.setVisible(false);
+        searchbutton.setVisible(true);
     }
 }

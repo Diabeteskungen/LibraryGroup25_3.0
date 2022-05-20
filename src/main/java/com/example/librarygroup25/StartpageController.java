@@ -35,6 +35,12 @@ public class StartpageController implements Initializable {
     private Button buttonAdmin;
 
     @FXML
+    private Button searchbutton;
+
+    @FXML
+    private Button backButton;
+
+    @FXML
     private TextField searchInput;
 
     @FXML
@@ -58,6 +64,7 @@ public class StartpageController implements Initializable {
     protected void search () throws Exception {
 
         Query query = new Query();
+        itemsinDB.clear();
         String checkBookExist = ("{ CALL spFindBook (?) }");
         String checkDvdExist = ("{ CALL spFindDvd (?) }");
         String searchInputText = searchInput.getText();
@@ -127,6 +134,15 @@ public class StartpageController implements Initializable {
 
     public void searchbuttonaction(ActionEvent actionEvent) throws Exception {
         search();
+        searchbutton.setVisible(false);
+        backButton.setVisible(true);
+
+    }
+
+    public void onBackButtonPress(ActionEvent actionEvent) throws Exception {
+        backButton.setVisible(false);
+        searchResult.setVisible(false);
+        searchbutton.setVisible(true);
     }
 }
 
