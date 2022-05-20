@@ -37,6 +37,9 @@ public class StartpageAdminController implements Initializable {
     private Button backButton;
 
     @FXML
+    private Button logoutButton;
+
+    @FXML
     private TextField searchInput;
 
     @FXML
@@ -127,6 +130,15 @@ public class StartpageAdminController implements Initializable {
         searchbutton.setVisible(true);
         deleteItemButton.setVisible(true);
         addItemButton.setVisible(true);
+    }
+    public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 }
 

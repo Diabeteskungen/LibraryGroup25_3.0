@@ -7,5 +7,10 @@
    <children>
       <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
       <Button layoutX="951.0" layoutY="140.0" mnemonicParsing="false" text="Home" />
+      <TextField layoutX="426.0" layoutY="338.0" promptText="Enter ISBN here..." />
+      <Label layoutX="426.0" layoutY="321.0" text="ISBN" />
+      <Button fx:id="removeButton" layoutX="471.0" layoutY="372.0" mnemonicParsing="false" onAction="#onRemoveButtonPress" text="Remove" />
+      <Label fx:id="removeErrorMessage" layoutX="600.0" layoutY="342.0" prefHeight="17.0" prefWidth="191.0" textFill="RED" />
+      <Label fx:id="removeSuccessMessage" layoutX="391.0" layoutY="417.0" prefHeight="17.0" prefWidth="220.0" textFill="#00ff33" />
    </children>
 </AnchorPane>

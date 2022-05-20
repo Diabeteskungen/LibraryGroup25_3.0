@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
@@ -80,6 +81,8 @@ public class RegisterController implements Initializable {
                     stage = new Stage();
                     stage.setScene(new Scene(root1));
                     stage.show();
+                } catch (SQLIntegrityConstraintViolationException e) {
+                    registerErrorText.setText("This email is already registered");
                 } catch (SQLException e) {
                     e.printStackTrace();
                     e.getCause();
