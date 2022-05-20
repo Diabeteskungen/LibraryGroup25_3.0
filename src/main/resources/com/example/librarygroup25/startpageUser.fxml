@@ -6,8 +6,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.StartpageUserController">
     <children>
         <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
-        <Label layoutX="282.0" layoutY="182.0" text="Search" />
-        <TextField fx:id="searchInput" layoutX="226.0" layoutY="200.0" />
+        <Label layoutX="482.0" layoutY="301.0" text="Search" />
+        <TextField fx:id="searchInput" layoutX="426.0" layoutY="319.0" />
         <TableView fx:id="searchResult" layoutY="109.0" visible="false">
             <columns>
                 <TableColumn fx:id="title" prefWidth="75.0" text="title" />
@@ -16,6 +16,6 @@
                 <TableColumn fx:id="id" prefWidth="75.0" text="id" />
             </columns>
         </TableView>
-        <Button fx:id="searchbutton" layoutX="275.0" layoutY="230.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Button" />
+        <Button fx:id="searchbutton" layoutX="474.0" layoutY="355.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Button" />
     </children>
 </AnchorPane>
