@@ -29,10 +29,11 @@ public class AddBookController {
     private TextField GenreField;
 
     @FXML
-    private TextField Location;
+    private TextField LocationField;
 
     @FXML
-    private Label registerErrorText;
+    private Label addBookErrorText;
+
 
     @FXML
     private Button AddBookButton;
@@ -42,7 +43,7 @@ public class AddBookController {
         for (int i = 0; i < inserts.length; i++) {
             if (inserts[i].equals("n")) {
                 allFilled = false;
-                registerErrorText.setText("Please enter all the information for the book");
+                addBookErrorText.setText("Please enter all the information for the book");
             }
         }return allFilled;
 
@@ -77,7 +78,7 @@ public class AddBookController {
         String author = AuthorField.getText();
         String publisher = PublisherField.getText();
         String genre = GenreField.getText();
-        String location = Location.getText();
+        String location = LocationField.getText();
 
         inserts = new String[]{isbn, title, author, publisher, genre, location};
         return inserts;
