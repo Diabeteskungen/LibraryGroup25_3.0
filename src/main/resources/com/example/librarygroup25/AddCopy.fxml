@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.librarygroup25.AddCopyController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.AddCopyController">
+    <children>
+        <TextField fx:id="IDField" layoutX="58.0" layoutY="74.0" />
+        <TextField fx:id="cTypeField" layoutX="58.0" layoutY="188.0" />
+        <TextField fx:id="barcodeField" layoutX="364.0" layoutY="74.0" />
+        <Button fx:id="AddCopyButton" layoutX="262.0" layoutY="246.0" mnemonicParsing="false" onAction="#onAddCopyButton" text="Add Copy" />
+        <Label layoutX="126.0" layoutY="49.0" prefHeight="17.0" prefWidth="23.0" text="ID" />
+        <Label layoutX="105.0" layoutY="161.0" text="Copies Type" />
+        <Label layoutX="417.0" layoutY="49.0" text="Barcode" />
+        <Label fx:id="addCopyErrorText" layoutX="244.0" layoutY="360.0" prefHeight="17.0" prefWidth="127.0" />
+    </children>
 </AnchorPane>
