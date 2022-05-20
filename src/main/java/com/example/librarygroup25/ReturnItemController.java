@@ -8,18 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class ReturnItemController {
 
-    @FXML
-    private Button logoutButton;
-
-    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
-        Stage stage = (Stage) logoutButton.getScene().getWindow();
-        stage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.show();
-    }
 }

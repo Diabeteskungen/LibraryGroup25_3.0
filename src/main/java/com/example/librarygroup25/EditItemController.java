@@ -30,6 +30,15 @@ public class EditItemController {
         stage.setScene(new Scene(root1));
         stage.show();
     }
+    public void openEditDvdButton (ActionEvent event) throws IOException {
+        Stage stage = (Stage) EditDvdButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("EditDvd.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
 
 
     }
