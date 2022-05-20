@@ -44,12 +44,16 @@ public class RemoveItemController {
             removeErrorMessage.setText("");
             removeSuccessMessage.setText("Item successfully removed!");
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            e.getCause();
-            removeErrorMessage.setText("This cannot be removed at this time");
+        } catch(SQLIntegrityConstraintViolationException e){
+            removeErrorMessage.setText("This item has active copies");
+            } catch(SQLException e){
+                e.printStackTrace();
+                e.getCause();
+
+            }
+
         }
 
     }
 
-}
+
