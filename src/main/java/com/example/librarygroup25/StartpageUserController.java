@@ -50,6 +50,8 @@ public class StartpageUserController implements Initializable {
     @FXML
     private TableColumn<Items,String> id;
 
+    @FXML
+    private Button returnItemButton;
 
     @FXML
     private Button LoanItem;
@@ -131,6 +133,15 @@ public class StartpageUserController implements Initializable {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
+    public void onReturnItemButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) returnItemButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("returnItem.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         stage = new Stage();
         stage.setScene(new Scene(root1));

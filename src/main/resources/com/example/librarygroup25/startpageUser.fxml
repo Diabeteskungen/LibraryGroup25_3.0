@@ -19,6 +19,7 @@
         <Button fx:id="searchbutton" layoutX="548.0" layoutY="318.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
       <Button fx:id="logoutButton" layoutX="946.0" layoutY="140.0" mnemonicParsing="false" onAction="#onLogoutButtonPress" text="Logout" />
       <Button fx:id="backButton" layoutY="140.0" mnemonicParsing="false" onAction="#onBackButtonPress" prefHeight="25.0" prefWidth="52.0" text="Back" visible="false" />
-      <Button fx:id="LoanItem" layoutX="455.0" layoutY="378.0" mnemonicParsing="false" onAction="#onActionLoanItem" text="Loan Item" />
+      <Button fx:id="LoanItem" layoutX="531.0" layoutY="376.0" mnemonicParsing="false" onAction="#onActionLoanItem" text="Loan Item" />
+      <Button fx:id="returnItemButton" layoutX="400.0" layoutY="376.0" mnemonicParsing="false" onAction="#onReturnItemButtonPress" text="Return Item" />
     </children>
 </AnchorPane>
