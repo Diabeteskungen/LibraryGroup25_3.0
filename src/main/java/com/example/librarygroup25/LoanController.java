@@ -36,7 +36,7 @@ public class LoanController {
     private Button closeReceiptButton;
 
     @FXML
-    private Button homeButton;
+    private Button logoutButton;
 
     @FXML
     private Label loanBookErrorText;
@@ -47,8 +47,8 @@ public class LoanController {
         closeReceiptButton.setVisible(false);
     }
 
-    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
-        Stage stage = (Stage) homeButton.getScene().getWindow();
+    public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
