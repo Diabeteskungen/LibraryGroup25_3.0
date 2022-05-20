@@ -6,20 +6,20 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.StartpageAdminController">
     <children>
         <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
-        <Label layoutX="482.0" layoutY="306.0" text="Search" />
-        <TextField fx:id="searchInput" layoutX="426.0" layoutY="323.0" />
-        <TableView fx:id="searchResult" layoutX="59.0" layoutY="140.0" prefHeight="460.0" prefWidth="883.0" visible="false">
+        <Label layoutX="400.0" layoutY="306.0" text="Search" />
+        <TextField fx:id="searchInput" layoutX="400.0" layoutY="323.0" />
+        <TableView fx:id="searchResult" layoutX="41.0" layoutY="140.0" prefHeight="460.0" prefWidth="905.0" visible="false">
             <columns>
-                <TableColumn fx:id="title" prefWidth="273.0" text="title" />
-                <TableColumn fx:id="author" minWidth="0.0" prefWidth="150.0" text="author" />
-                <TableColumn fx:id="genre" prefWidth="286.0" text="genre" />
-                <TableColumn fx:id="id" prefWidth="173.0" text="id" />
+                <TableColumn fx:id="title" prefWidth="228.0" text="title" />
+                <TableColumn fx:id="author" minWidth="0.0" prefWidth="228.0" text="author" />
+                <TableColumn fx:id="genre" prefWidth="228.0" text="genre" />
+                <TableColumn fx:id="id" prefWidth="228.0" text="id" />
             </columns>
         </TableView>
-        <Button fx:id="searchbutton" layoutX="474.0" layoutY="375.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
-      <Button fx:id="removeItemButton" layoutX="562.0" layoutY="375.0" mnemonicParsing="false" onAction="#openRemoveItem" text="Remove Item" />
+        <Button fx:id="searchbutton" layoutX="548.0" layoutY="323.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
+      <Button fx:id="removeItemButton" layoutX="513.0" layoutY="375.0" mnemonicParsing="false" onAction="#openRemoveItem" text="Remove Item" />
       <Button fx:id="logoutButton" layoutX="946.0" layoutY="140.0" mnemonicParsing="false" onAction="#onLogoutButtonPress" text="Logout" />
-      <Button fx:id="addItemButton" layoutX="348.0" layoutY="375.0" mnemonicParsing="false" onAction="#openaddItem" prefHeight="25.0" prefWidth="78.0" text="Add Item" />
-      <Button fx:id="backButton" layoutX="942.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackButtonPress" text="Back" visible="false" />
+      <Button fx:id="addItemButton" layoutX="400.0" layoutY="375.0" mnemonicParsing="false" onAction="#openaddItem" prefHeight="25.0" prefWidth="78.0" text="Add Item" />
+      <Button fx:id="backButton" layoutY="140.0" mnemonicParsing="false" onAction="#onBackButtonPress" text="Back" visible="false" />
     </children>
 </AnchorPane>

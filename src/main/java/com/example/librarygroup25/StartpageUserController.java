@@ -4,9 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -21,6 +25,9 @@ public class StartpageUserController implements Initializable {
 
     @FXML
     private Button backButton;
+
+    @FXML
+    private Button logoutButton;
 
     @FXML
     private Button searchbutton;
@@ -104,5 +111,15 @@ public class StartpageUserController implements Initializable {
         backButton.setVisible(false);
         searchResult.setVisible(false);
         searchbutton.setVisible(true);
+    }
+
+    public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 }

@@ -43,6 +43,9 @@ public class RegisterController implements Initializable {
     private Button registerButton;
 
     @FXML
+    private Button homeButton;
+
+    @FXML
     private Label registerErrorText;
 
     @Override
@@ -64,54 +67,64 @@ public class RegisterController implements Initializable {
 
     }
 
-        @FXML
-        protected void onRegisterButtonClick(ActionEvent event) throws Exception {
-            String registerUser = ("{ CALL spRegisterUser(?, ?, ?, ?, ? ,?) }");
-            String[] UserInfo = getUser();
-            ResultSet resultSet;
-            if (checkEmptyFields(UserInfo)) {
-                Query query = new Query();
-                String[] actualUserInfo = getUser();
-                try {
-                    query.querySix(registerUser, actualUserInfo[0], actualUserInfo[1], actualUserInfo[2], actualUserInfo[3], actualUserInfo[4], actualUserInfo[5]);
-                    Stage stage = (Stage) registerButton.getScene().getWindow();
-                    stage.close();
-                    FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginUser.fxml"));
-                    Parent root1 = (Parent) fxmlLoader.load();
-                    stage = new Stage();
-                    stage.setScene(new Scene(root1));
-                    stage.show();
-                } catch (SQLIntegrityConstraintViolationException e) {
-                    registerErrorText.setText("This email is already registered");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                    e.getCause();
-                    }
-
-                }
-
-
+    @FXML
+    protected void onRegisterButtonClick(ActionEvent event) throws Exception {
+        String registerUser = ("{ CALL spRegisterUser(?, ?, ?, ?, ? ,?) }");
+        String[] UserInfo = getUser();
+        ResultSet resultSet;
+        if (checkEmptyFields(UserInfo)) {
+            Query query = new Query();
+            String[] actualUserInfo = getUser();
+            try {
+                query.querySix(registerUser, actualUserInfo[0], actualUserInfo[1], actualUserInfo[2], actualUserInfo[3], actualUserInfo[4], actualUserInfo[5]);
+                Stage stage = (Stage) registerButton.getScene().getWindow();
+                stage.close();
+                FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginUser.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
+            } catch (SQLIntegrityConstraintViolationException e) {
+                registerErrorText.setText("This email is already registered");
+            } catch (SQLException e) {
+                e.printStackTrace();
+                e.getCause();
             }
 
-    public String shortenToFirstLetter(String uType) {
-        String stringToConvert = (String.valueOf(uTypeBox.getValue()));
-        char userType = stringToConvert.charAt(0);
-        return Character.toString(userType);
-    }
-
-        public String[] getUser() {
-            String[] inserts;
-            String firstname = fNameField.getText();
-            String lastname = lNameField.getText();
-            String email = emailField.getText();
-            String username = uNameField.getText();
-            String password = pwdField.getText();
-            String uType = shortenToFirstLetter(String.valueOf(uTypeBox.getValue()));
-
-            inserts = new String[]{firstname, lastname, email, username, password, uType};
-            return inserts;
         }
+
+
     }
+
+    public String shortenToFirstLetter(String uType) {
+    String stringToConvert = (String.valueOf(uTypeBox.getValue()));
+    char userType = stringToConvert.charAt(0);
+    return Character.toString(userType);
+    }
+
+    public String[] getUser() {
+        String[] inserts;
+        String firstname = fNameField.getText();
+        String lastname = lNameField.getText();
+        String email = emailField.getText();
+        String username = uNameField.getText();
+        String password = pwdField.getText();
+        String uType = shortenToFirstLetter(String.valueOf(uTypeBox.getValue()));
+
+        inserts = new String[]{firstname, lastname, email, username, password, uType};
+        return inserts;
+    }
+
+    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
+        Stage stage = (Stage) homeButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
+}
 
 
 
