@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 public class ReturnItemController {
 
     @FXML
-    private Button homeButton;
+    private Button logoutButton;
 
     public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
-        Stage stage = (Stage) homeButton.getScene().getWindow();
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
