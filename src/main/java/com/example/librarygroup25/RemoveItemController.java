@@ -29,7 +29,7 @@ public class RemoveItemController {
     public void onHomeButtonPress(ActionEvent event) throws Exception {
         Stage stage = (Stage) homeButton.getScene().getWindow();
         stage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpageAdmin.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         stage = new Stage();
         stage.setScene(new Scene(root1));

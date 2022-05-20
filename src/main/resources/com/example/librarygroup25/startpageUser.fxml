@@ -6,18 +6,18 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.StartpageUserController">
     <children>
         <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
-        <Label layoutX="482.0" layoutY="301.0" text="Search" />
-        <TextField fx:id="searchInput" layoutX="426.0" layoutY="319.0" />
-        <TableView fx:id="searchResult" layoutX="18.0" layoutY="138.0" prefHeight="459.0" prefWidth="928.0" visible="false">
+        <Label layoutX="400.0" layoutY="300.0" text="Find Book/DvD" />
+        <TextField fx:id="searchInput" layoutX="400.0" layoutY="318.0" />
+        <TableView fx:id="searchResult" layoutX="52.0" layoutY="140.0" prefHeight="460.0" prefWidth="894.0" visible="false">
             <columns>
-                <TableColumn fx:id="title" prefWidth="294.0" text="title" />
-                <TableColumn fx:id="author" prefWidth="205.0" text="author" />
-                <TableColumn fx:id="genre" prefWidth="281.0" text="genre" />
-                <TableColumn fx:id="id" prefWidth="147.0" text="id" />
+                <TableColumn fx:id="title" prefWidth="228.0" text="title" />
+                <TableColumn fx:id="author" prefWidth="228.0" text="author" />
+                <TableColumn fx:id="genre" prefWidth="228.0" text="genre" />
+                <TableColumn fx:id="id" prefWidth="228.0" text="id" />
             </columns>
         </TableView>
-        <Button fx:id="searchbutton" layoutX="474.0" layoutY="355.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
+        <Button fx:id="searchbutton" layoutX="548.0" layoutY="318.0" mnemonicParsing="false" onAction="#searchbuttonaction" text="Search" />
       <Button layoutX="946.0" layoutY="140.0" mnemonicParsing="false" text="Logout" />
-      <Button fx:id="backButton" layoutX="947.0" layoutY="545.0" mnemonicParsing="false" onAction="#onBackButtonPress" prefHeight="25.0" prefWidth="52.0" text="Back" />
+      <Button fx:id="backButton" layoutY="140.0" mnemonicParsing="false" onAction="#onBackButtonPress" prefHeight="25.0" prefWidth="52.0" text="Back" visible="false" />
     </children>
 </AnchorPane>
