@@ -32,6 +32,9 @@ public class EditBookController {
     private TextField LocationField;
 
     @FXML
+    private Label editSuccessMessage;
+
+    @FXML
     private Button EditBookButton;
 
     @FXML
@@ -42,6 +45,7 @@ public class EditBookController {
         String[] actualBookInfo = getUser();
         try {
             query.querySix(editBook, actualBookInfo[0], actualBookInfo[1], actualBookInfo[2], actualBookInfo[3], actualBookInfo[4], actualBookInfo[5]);
+            editSuccessMessage.setText("Book successfully edited!");
 
         } catch (SQLException e) {
             e.printStackTrace();
