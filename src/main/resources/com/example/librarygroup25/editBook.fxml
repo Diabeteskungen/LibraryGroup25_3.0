@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.EditBookController">
+   <children>
+      <TextField fx:id="ISBNfield" layoutX="209.0" layoutY="58.0" prefHeight="25.0" prefWidth="161.0" promptText="Enter ISBN of book to edit..." />
+      <TextField fx:id="TitleField" layoutX="63.0" layoutY="138.0" />
+      <TextField fx:id="AuthorField" layoutX="63.0" layoutY="213.0" />
+      <TextField fx:id="PublisherField" layoutX="367.0" layoutY="125.0" />
+      <TextField fx:id="GenreField" layoutX="364.0" layoutY="213.0" />
+      <TextField fx:id="LocationField" layoutX="216.0" layoutY="268.0" />
+      <Button fx:id="EditBookButton" layoutX="256.0" layoutY="348.0" mnemonicParsing="false" onAction="#onEditBookButton" text="Edit Book" />
+      <Label layoutX="261.0" layoutY="34.0" prefHeight="17.0" prefWidth="58.0" text="     ISBN" />
+      <Label layoutX="113.0" layoutY="117.0" text="New Title" />
+      <Label layoutX="106.0" layoutY="192.0" text="New Author" />
+      <Label layoutX="401.0" layoutY="100.0" text="New Publisher" />
+      <Label layoutX="409.0" layoutY="192.0" text="New Genre" />
+      <Label layoutX="253.0" layoutY="238.0" text="New Location" />
+   </children>
+</AnchorPane>

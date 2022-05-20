@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarygroup25.EditItemController">
+    <children>
+        <Button fx:id="EditBookButton" layoutX="383.0" layoutY="340.0" mnemonicParsing="false" onAction="#openEditBook" text="Edit Book" />
+        <Button fx:id="EditDvdButton" layoutX="469.0" layoutY="340.0" mnemonicParsing="false" onAction="#openEditDvd" text="Edit Dvd" />
+        <Button fx:id="EditCopyButton" layoutX="549.0" layoutY="340.0" mnemonicParsing="false" onAction="#openAddCopy" text="Edit copy" />
+        <AnchorPane prefHeight="140.0" prefWidth="1000.0" style="-fx-background-color: #1985DF;" />
+    </children>
+</AnchorPane>

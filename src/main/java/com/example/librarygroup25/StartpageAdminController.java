@@ -40,6 +40,9 @@ public class StartpageAdminController implements Initializable {
     private Button logoutButton;
 
     @FXML
+    private Button editItemButton;
+
+    @FXML
     private TextField searchInput;
 
     @FXML
@@ -107,6 +110,16 @@ public class StartpageAdminController implements Initializable {
         Stage stage = (Stage) removeItemButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("removeItem.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
+
+    public void onEditItemButton (ActionEvent event) throws IOException {
+        Stage stage = (Stage) editItemButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("editItem.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         stage = new Stage();
         stage.setScene(new Scene(root1));
