@@ -15,14 +15,19 @@ public class LoginController {
 
     @FXML
     private TextField UsernameField;
+
     @FXML
     private TextField PasswordField;
+
     @FXML
     private Label LoginErrorText;
+
     @FXML
     private Button buttonLogin;
+
     @FXML
     private Button buttonRegister;
+
     @FXML
     private Button homeButton;
 
@@ -35,7 +40,6 @@ public class LoginController {
         stage = new Stage();
         stage.setScene(new Scene(root1));
         stage.show();
-
     }
 
     public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
