@@ -50,6 +50,10 @@ public class StartpageUserController implements Initializable {
     @FXML
     private TableColumn<Items,String> id;
 
+
+    @FXML
+    private Button LoanItem;
+
     public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList();
 
 
@@ -104,6 +108,16 @@ public class StartpageUserController implements Initializable {
         search();
         searchbutton.setVisible(false);
         backButton.setVisible(true);
+
+    }
+    public void onActionLoanItem(ActionEvent actionEvent) throws Exception{
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loan.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
 
     }
 
