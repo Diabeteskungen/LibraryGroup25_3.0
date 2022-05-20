@@ -103,6 +103,16 @@ public class StartpageAdminController implements Initializable {
         stage.show();
     }
 
+    public void openRemoveItem (ActionEvent event) throws IOException {
+        Stage stage = (Stage) addItemButton.getScene().getWindow();
+        stage.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("removeItem.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        stage = new Stage();
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
