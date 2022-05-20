@@ -34,9 +34,16 @@ public class LoanController {
     @FXML
     private Label loanBookErrorText;
 
+    public void onCLoseReceiptButton(ActionEvent event) throws Exception {
+        RecieptText.setText("");
+        RecieptFrame.setVisible(false);
+        closeReceiptButton.setVisible(false);
+    }
+
     @FXML
     private void onButtonCheckLoan(ActionEvent event) throws SQLException { //Primary function that calls SP:s from database and checks that the book that is trying to be returned fills requirements
         String checkloan = "{ CALL spRegisterloan (?, ?) }";
+        String checkreturned = "{CALL spCheckReturned (?) }";
         Query query = new Query();
         String barcode = BarcodeField.getText();
         String username = UsernameField.getText();
@@ -48,34 +55,55 @@ public class LoanController {
         String barcoderecipt = null;
         String borrowedDaterecipt = null;
         String lastReturnDaterecipt = null;
-        try {
-            resultSet = query.queryDouble(checkloan, barcode, username);
+        String isreturned = null;
 
+
+        try {
+            resultSet = query.querySingle(checkreturned, barcode);
             while (resultSet.next()) {
-                titlerecipt = resultSet.getString("title");
-                barcoderecipt = resultSet.getString("barcode");
-                borrowedDaterecipt = resultSet.getString("borrowedDate");
-                lastReturnDaterecipt = resultSet.getString("lastReturnDate");
-                emailrecipt = resultSet.getString("email");
+                isreturned = resultSet.getString("returned");
 
             }
-            RecieptText.setText("A recipt has been sent to " + emailrecipt + " containing the following information:\n\nTitle: "+
-                    titlerecipt + "\nBarcode: " + barcoderecipt + "\nBorrowed Date: " + borrowedDaterecipt + "\nLast Return Date: " + lastReturnDaterecipt);
-            RecieptFrame.setVisible(true);
-            closeReceiptButton.setVisible(true);
+
+            if (isreturned.equals("True")) {
 
 
-        } catch (SQLException e) {
-            loanBookErrorText.setText("You cannot loan this at this time.");
+                resultSet = query.queryDouble(checkloan, barcode, username);
+                while (resultSet.next()) {
+
+
+                    titlerecipt = resultSet.getString("title");
+                    barcoderecipt = resultSet.getString("barcode");
+                    borrowedDaterecipt = resultSet.getString("borrowedDate");
+                    lastReturnDaterecipt = resultSet.getString("lastReturnDate");
+                    emailrecipt = resultSet.getString("email");
+
+
+                    {
+                        RecieptText.setText("A recipt has been sent to " + emailrecipt + " containing the following information:\n\nTitle: " +
+                                titlerecipt + "\nBarcode: " + barcoderecipt + "\nBorrowed Date: " + borrowedDaterecipt + "\nLast Return Date: " + lastReturnDaterecipt);
+                        RecieptFrame.setVisible(true);
+                        closeReceiptButton.setVisible(true);
+
+                    }
+
+
+                }
+
+            }
+            } catch(SQLException e){
             e.printStackTrace();
             e.getCause();
         }
-    }
 
-    public void onCLoseReceiptButton(ActionEvent event) {
-        RecieptText.setText("");
-        RecieptFrame.setVisible(false);
-        closeReceiptButton.setVisible(false);
 
     }
-}
+
+    }
+
+
+
+
+
+
+
