@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import java.sql.SQLException;
 
 public class EditDvdController {
+    //@FXML annotations
     @FXML
     private TextField ArtNmrField;
 
@@ -34,6 +35,7 @@ public class EditDvdController {
     @FXML
     private Button EditDvdButton;
 
+    //check AddDvd
     @FXML
     protected void onEditDvdButton(ActionEvent event)throws Exception {
         String editBook = ("{ CALL spEditDvd(?, ?, ?, ?, ?, ?) }");
@@ -49,6 +51,7 @@ public class EditDvdController {
             e.getCause();
         }
     }
+    //check AddDvd
     public String[] getUser() {
         String[] inserts;
         String artnumber = ArtNmrField.getText();

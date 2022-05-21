@@ -13,8 +13,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 public class AddDvdController {
-
-
+    //@FXML annotations
     @FXML
     private TextField ArtNmrfield;
 
@@ -33,10 +32,10 @@ public class AddDvdController {
     @FXML
     private Label addDvdErrorText;
 
-
     @FXML
     private Button AddDvdButton;
 
+    //Boolean for information entry into the textfields
     public boolean checkEmtyFields(String[] inserts) {
         boolean allFilled = true;
         for (int i = 0; i < inserts.length; i++) {
@@ -46,9 +45,8 @@ public class AddDvdController {
             }
         }
         return allFilled;
-
     }
-
+    //on button press sp check and add dvd, check Query, new stage
     @FXML
     protected void onAddDvdButton(ActionEvent event) throws Exception {
         String addDvd = ("{ CALL spAddDvd(?, ?, ?, ?, ?, ?) }");
@@ -69,10 +67,9 @@ public class AddDvdController {
                 e.printStackTrace();
                 e.getCause();
             }
-
         }
     }
-
+    //string for adding information of dvd
     public String[] getUser() {
         String[] inserts;
         String artnmr = ArtNmrfield.getText();

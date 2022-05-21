@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoanController {
-
+    //@FXML annotations
     @FXML
     private TextField BarcodeField;
 
@@ -41,12 +41,13 @@ public class LoanController {
     @FXML
     private Label loanBookErrorText;
 
+    //close receipt on buttonn press
     public void onCLoseReceiptButton(ActionEvent event) throws Exception {
         RecieptText.setText("");
         RecieptFrame.setVisible(false);
         closeReceiptButton.setVisible(false);
     }
-
+    //logoutbutton -> startpage
     public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
@@ -56,7 +57,7 @@ public class LoanController {
         stage.setScene(new Scene(root1));
         stage.show();
     }
-
+    //call 2 sp to check if item is returned and to reister new loan
     @FXML
     private void onButtonCheckLoan(ActionEvent event) throws SQLException { //Primary function that calls SP:s from database and checks that the book that is trying to be returned fills requirements
         String checkloan = "{ CALL spRegisterloan (?, ?) }";
@@ -95,7 +96,7 @@ public class LoanController {
                     lastReturnDaterecipt = resultSet.getString("lastReturnDate");
                     emailrecipt = resultSet.getString("email");
 
-
+                    //receipt for loan
                     {
                         RecieptText.setText("A recipt has been sent to " + emailrecipt + " containing the following information:\n\nTitle: " +
                                 titlerecipt + "\nBarcode: " + barcoderecipt + "\nBorrowed Date: " + borrowedDaterecipt + "\nLast Return Date: " + lastReturnDaterecipt);

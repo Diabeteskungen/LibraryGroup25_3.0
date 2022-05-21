@@ -22,7 +22,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddItemController {
-
+    //@FXML annotations
     @FXML
     private Button AddBookButton;
 
@@ -32,7 +32,7 @@ public class AddItemController {
     @FXML
     private Button AddCopyButton;
 
-
+    //button press takes you to new stage
     public void openAddBook (ActionEvent event) throws IOException {
         Stage stage = (Stage) AddBookButton.getScene().getWindow();
         stage.close();
@@ -42,7 +42,7 @@ public class AddItemController {
         stage.setScene(new Scene(root1));
         stage.show();
     }
-
+    //button press takes you to new stage
     public void openAddDvd (ActionEvent event) throws IOException {
         Stage stage = (Stage) AddDvdButton.getScene().getWindow();
         stage.close();
@@ -52,7 +52,7 @@ public class AddItemController {
         stage.setScene(new Scene(root1));
         stage.show();
     }
-
+    //button press takes you to new stage
     public void openAddCopy (ActionEvent event) throws IOException {
         Stage stage = (Stage) AddCopyButton.getScene().getWindow();
         stage.close();

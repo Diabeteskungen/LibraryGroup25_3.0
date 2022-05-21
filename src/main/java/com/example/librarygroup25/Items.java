@@ -1,18 +1,20 @@
 package com.example.librarygroup25;
 
 public class Items {
+    //Strings
     String id;
     String title;
     String author;
     String genre;
+
 public Items(String id, String title, String author, String genre){
+    //attributes for objects
     this.id = id;
     this.title = title;
     this.author = author;
     this.genre = genre;
-
 }
-
+    //getters and setters
     public String getId() {
         return id;
     }

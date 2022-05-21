@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 public class EditBookController {
+    //@FXML annotations
     @FXML
     private TextField ISBNfield;
 
@@ -37,6 +38,7 @@ public class EditBookController {
     @FXML
     private Button EditBookButton;
 
+    //check AddDvd
     @FXML
     protected void onEditBookButton(ActionEvent event)throws Exception {
         String editBook = ("{ CALL spEditBook(?, ?, ?, ?, ?, ?) }");
@@ -52,16 +54,17 @@ public class EditBookController {
             e.getCause();
         }
     }
-                public String[] getUser() {
-                    String[] inserts;
-                    String isbn = ISBNfield.getText();
-                    String title = TitleField.getText();
-                    String author = AuthorField.getText();
-                    String publisher = PublisherField.getText();
-                    String genre = GenreField.getText();
-                    String location = LocationField.getText();
+    //check AddDvd
+    public String[] getUser() {
+        String[] inserts;
+        String isbn = ISBNfield.getText();
+        String title = TitleField.getText();
+        String author = AuthorField.getText();
+        String publisher = PublisherField.getText();
+        String genre = GenreField.getText();
+        String location = LocationField.getText();
 
-                    inserts = new String[]{isbn, title, author, publisher, genre, location};
-                    return inserts;
-                }
+        inserts = new String[]{isbn, title, author, publisher, genre, location};
+        return inserts;
+    }
 }

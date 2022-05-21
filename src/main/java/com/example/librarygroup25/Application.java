@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
+    //start stage
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
@@ -15,7 +16,7 @@ public class Application extends javafx.application.Application {
         stage.setScene(scene);
         stage.show();
     }
-
+    //launch application
     public static void main(String[] args) {
         launch();
     }

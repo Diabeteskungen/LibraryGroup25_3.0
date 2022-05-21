@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 public class AddBookController {
+    //@FXML annotations
     @FXML
     private TextField ISBNfield;
 
@@ -34,10 +35,10 @@ public class AddBookController {
     @FXML
     private Label addBookErrorText;
 
-
     @FXML
     private Button AddBookButton;
 
+    //Boolean for information entry into the textfields
     public boolean checkEmtyFields(String[] inserts) {
         boolean allFilled = true;
         for (int i = 0; i < inserts.length; i++) {
@@ -48,6 +49,7 @@ public class AddBookController {
         }return allFilled;
 
     }
+    //on button press sp check and add book, querysix
     @FXML
     protected void onAddBookButton(ActionEvent event)throws Exception {
         String addBook = ("{ CALL spAddBook(?, ?, ?, ?, ?, ?) }");
@@ -71,6 +73,7 @@ public class AddBookController {
 
         }
     }
+    //string for adding information of book
     public String[] getUser() {
         String[] inserts;
         String isbn = ISBNfield.getText();

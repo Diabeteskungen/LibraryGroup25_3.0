@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class EditItemController {
+    //@FXML annotations
     @FXML
     private Button EditBookButton;
 
@@ -20,7 +21,7 @@ public class EditItemController {
     @FXML
     private Button EditCopyButton;
 
-
+    //checkAddDvd
     public void openEditBook (ActionEvent event) throws IOException {
         Stage stage = (Stage) EditBookButton.getScene().getWindow();
         stage.close();
@@ -30,6 +31,7 @@ public class EditItemController {
         stage.setScene(new Scene(root1));
         stage.show();
     }
+    //checkAddDvd
     public void openEditDvdButton (ActionEvent event) throws IOException {
         Stage stage = (Stage) EditDvdButton.getScene().getWindow();
         stage.close();
@@ -39,7 +41,5 @@ public class EditItemController {
         stage.setScene(new Scene(root1));
         stage.show();
     }
-
-
-    }
+}
 

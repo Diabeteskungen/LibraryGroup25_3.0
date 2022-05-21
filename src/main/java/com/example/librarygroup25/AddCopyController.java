@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import java.sql.*;
 
 public class AddCopyController {
-
+    //@FXML annotations
     @FXML
     private TextField IDField;
 
@@ -24,6 +24,7 @@ public class AddCopyController {
     @FXML
     private Label addCopyErrorText;
 
+    //on button press sp check and add copy, query
     public void onAddCopyButton(ActionEvent actionEvent) throws SQLException {
         String addCopy = "{ CALL spAddCopy (?, ?, ?)}";
         String[] testArr = getUser();
@@ -40,7 +41,7 @@ public class AddCopyController {
         }
 
     }
-
+    //string for adding information of copy
     public String[] getUser() {
         String[] inserts;
         String insertID = IDField.getText();
@@ -51,6 +52,7 @@ public class AddCopyController {
         return inserts;
     }
 
+    //Boolean for information entry into the textfields
     public boolean checkEmptyFields(String[] inserts) {
         boolean allFilled = true;
         for (int i = 0; i < inserts.length; i++) {
