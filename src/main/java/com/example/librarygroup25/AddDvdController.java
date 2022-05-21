@@ -24,6 +24,9 @@ public class AddDvdController {
     private TextField DirectorField;
 
     @FXML
+    private TextField PGField;
+
+    @FXML
     private TextField GenreField;
 
     @FXML
@@ -41,7 +44,7 @@ public class AddDvdController {
         for (int i = 0; i < inserts.length; i++) {
             if (inserts[i].equals("n")) {
                 allFilled = false;
-                addDvdErrorText.setText("Please enter all the information for the book");
+                addDvdErrorText.setText("Please enter all the information for the DVD");
             }
         }
         return allFilled;
@@ -55,7 +58,7 @@ public class AddDvdController {
             Query query = new Query();
             String[] actualDvdInfo = getUser();
             try {
-                query.queryFive(addDvd, actualDvdInfo[0], actualDvdInfo[1], actualDvdInfo[2], actualDvdInfo[3], actualDvdInfo[4]);
+                query.querySix(addDvd, actualDvdInfo[0], actualDvdInfo[1], actualDvdInfo[2], actualDvdInfo[3], actualDvdInfo[4], actualDvdInfo[5]);
                 Stage stage = (Stage) AddDvdButton.getScene().getWindow();
                 stage.close();
                 FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("addItem.fxml"));
@@ -77,8 +80,9 @@ public class AddDvdController {
         String director = DirectorField.getText();
         String genre = GenreField.getText();
         String location = LocationField.getText();
+        String PG = PGField.getText();
 
-        inserts = new String[]{artnmr, title, director, genre, location};
+        inserts = new String[]{artnmr, title, director, genre, location, PG};
         return inserts;
     }
 }

@@ -157,6 +157,10 @@ public class StartpageAdminController implements Initializable {
         removeItemButton.setVisible(false);
         addItemButton.setVisible(false);
         backButton.setVisible(true);
+        editItemButton.setVisible(false);
+        loanedItemsButton.setVisible(false);
+
+
 
     }
 
@@ -166,6 +170,8 @@ public class StartpageAdminController implements Initializable {
         searchbutton.setVisible(true);
         removeItemButton.setVisible(true);
         addItemButton.setVisible(true);
+        editItemButton.setVisible(true);
+        loanedItemsButton.setVisible(true);
     }
     public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
         Stage stage = (Stage) logoutButton.getScene().getWindow();

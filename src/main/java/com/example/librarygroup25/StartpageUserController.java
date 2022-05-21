@@ -33,6 +33,9 @@ public class StartpageUserController implements Initializable {
     private Button searchbutton;
 
     @FXML
+    private Button LoanItem;
+
+    @FXML
     private TextField searchInput;
 
     @FXML
@@ -53,8 +56,7 @@ public class StartpageUserController implements Initializable {
     @FXML
     private Button returnItemButton;
 
-    @FXML
-    private Button LoanItem;
+
 
     public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList();
 
@@ -110,6 +112,8 @@ public class StartpageUserController implements Initializable {
         search();
         searchbutton.setVisible(false);
         backButton.setVisible(true);
+        returnItemButton.setVisible(false);
+        LoanItem.setVisible(false);
 
     }
     public void onActionLoanItem(ActionEvent actionEvent) throws Exception{ //When pressed takes you to new Stage
@@ -127,6 +131,8 @@ public class StartpageUserController implements Initializable {
         backButton.setVisible(false);
         searchResult.setVisible(false);
         searchbutton.setVisible(true);
+        returnItemButton.setVisible(true);
+        LoanItem.setVisible(true);
     }
 
     public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {//When pressed takes you to new Stage

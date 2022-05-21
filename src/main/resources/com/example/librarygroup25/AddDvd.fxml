@@ -7,15 +7,17 @@
     <children>
         <TextField fx:id="ArtNmrfield" layoutX="58.0" layoutY="74.0" />
         <TextField fx:id="TitleField" layoutX="58.0" layoutY="188.0" />
+      <TextField fx:id="PGField" layoutX="58.0" layoutY="303.0" />
         <TextField fx:id="DirectorField" layoutX="364.0" layoutY="74.0" />
         <TextField fx:id="GenreField" layoutX="364.0" layoutY="188.0" />
         <TextField fx:id="LocationField" layoutX="364.0" layoutY="303.0" />
         <Button fx:id="AddDvdButton" layoutX="407.0" layoutY="343.0" mnemonicParsing="false" onAction="#onAddDvdButton" text="Add Dvd" />
         <Label layoutX="88.0" layoutY="50.0" prefHeight="17.0" prefWidth="90.0" text="Article number" />
-        <Label layoutX="114.0" layoutY="162.0" text="Title" />
+        <Label layoutX="122.0" layoutY="162.0" text="Title" />
         <Label layoutX="417.0" layoutY="49.0" text="Director" />
-        <Label layoutX="425.0" layoutY="162.0" text="Genre" />
-        <Label layoutX="425.0" layoutY="280.0" text="Location" />
+        <Label layoutX="423.0" layoutY="162.0" text="Genre" />
+        <Label layoutX="416.0" layoutY="280.0" text="Location" />
         <Label fx:id="addDvdErrorText" layoutX="262.0" layoutY="360.0" />
+      <Label layoutX="125.0" layoutY="280.0" text="PG" />
     </children>
 </AnchorPane>
