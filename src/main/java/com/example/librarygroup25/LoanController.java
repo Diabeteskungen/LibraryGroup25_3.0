@@ -98,7 +98,7 @@ public class LoanController {
 
                     //receipt for loan
                     {
-                        RecieptText.setText("A recipt has been sent to " + emailrecipt + " containing the following information:\n\nTitle: " +
+                        RecieptText.setText("A receipt has been sent to " + emailrecipt + " containing the following information:\n\nTitle: " +
                                 titlerecipt + "\nBarcode: " + barcoderecipt + "\nBorrowed Date: " + borrowedDaterecipt + "\nLast Return Date: " + lastReturnDaterecipt);
                         loanBookErrorText.setText("");
                         RecieptFrame.setVisible(true);
