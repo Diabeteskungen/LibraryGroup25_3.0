@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class MissingItemsController implements Initializable {
+public class MissingItemsController implements Initializable { // called to initialize a controller
 
     @FXML
     private Button homeButton;
@@ -51,7 +51,7 @@ public class MissingItemsController implements Initializable {
     public static ObservableList<LoanedItems> items = FXCollections.observableArrayList();
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) { //Giving out array of items a title
         items.clear();
         title.setCellValueFactory(new PropertyValueFactory<>("Title"));
         loanNr.setCellValueFactory(new PropertyValueFactory<>("loanNr"));
@@ -63,7 +63,7 @@ public class MissingItemsController implements Initializable {
         missingItemsList.setItems(items);
 
     }
-    public void onUpdateButton(ActionEvent actionEvent) {
+    public void onUpdateButton(ActionEvent actionEvent) { // query to find missing items in DB
         items.clear();
         ResultSet resultSet;
         String findMissingItems = "{ CALL spfindMissingItems() }";
@@ -84,7 +84,7 @@ public class MissingItemsController implements Initializable {
         }
     }
 
-    public void onHomeButtonPress(ActionEvent actionEvent) throws IOException {
+    public void onHomeButtonPress(ActionEvent actionEvent) throws IOException { // going to new page when pressing button
         Stage stage = (Stage) homeButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpageAdmin.fxml"));

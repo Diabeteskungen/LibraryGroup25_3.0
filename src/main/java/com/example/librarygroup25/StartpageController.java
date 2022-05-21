@@ -61,7 +61,7 @@ public class StartpageController implements Initializable {
     public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList();
 
 
-    protected void search () throws Exception {
+    protected void search () throws Exception { // Exactly the same function as for admin controller but for user check LoginaAdminController for full information
 
         Query query = new Query();
         itemsinDB.clear();

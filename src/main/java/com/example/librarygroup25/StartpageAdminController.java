@@ -63,7 +63,7 @@ public class StartpageAdminController implements Initializable {
     @FXML
     private TableColumn<Items,String> id;
 
-    public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList();
+    public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList(); //Array for all items in DB
 
     public StartpageAdminController() {
     }
@@ -73,8 +73,8 @@ public class StartpageAdminController implements Initializable {
 
         Query query = new Query();
         itemsinDB.clear();
-        String checkBookExist = ("{ CALL spFindBook (?) }");
-        String checkDvdExist = ("{ CALL spFindDvd (?) }");
+        String checkBookExist = ("{ CALL spFindBook (?) }"); //SP to find book
+        String checkDvdExist = ("{ CALL spFindDvd (?) }"); //SP to find DVD
         String searchInputText = searchInput.getText();
         ResultSet resultSet;
         String outputFromDB = null;
@@ -82,13 +82,13 @@ public class StartpageAdminController implements Initializable {
         try {
             resultSet = query.querySingle(checkBookExist, searchInputText);
 
-            while (resultSet.next()) {
+            while (resultSet.next()) { //function to check if the input matches with any of the values in DB
                 itemsinDB.add(new Items(resultSet.getString("isbn"), resultSet.getString("bTitle"),resultSet.getString("author"),resultSet.getString("tags")));
 
             }
             resultSet = query.querySingle(checkDvdExist, searchInputText);
 
-            while (resultSet.next()) {
+            while (resultSet.next()) {//function to check if the input matches with any of the values in DB
                 itemsinDB.add(new Items(resultSet.getString("artNr"), resultSet.getString("dTitle"),resultSet.getString("director"),resultSet.getString("tags")));
 
             }
@@ -99,7 +99,7 @@ public class StartpageAdminController implements Initializable {
         }
     }
 
-    public void openaddItem (ActionEvent event) throws IOException {
+    public void openaddItem (ActionEvent event) throws IOException { //When Button pressed takes you to knew stage
         Stage stage = (Stage) addItemButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("addItem.fxml"));
@@ -109,7 +109,7 @@ public class StartpageAdminController implements Initializable {
         stage.show();
     }
 
-    public void openRemoveItem (ActionEvent event) throws IOException {
+    public void openRemoveItem (ActionEvent event) throws IOException { //When button pressed takes you to knew stage
         Stage stage = (Stage) removeItemButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("removeItem.fxml"));

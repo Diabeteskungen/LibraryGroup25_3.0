@@ -54,7 +54,7 @@ public class RegisterController implements Initializable {
     }
 
 
-    public boolean checkEmptyFields(String[] inserts) {
+    public boolean checkEmptyFields(String[] inserts) { // for loop to check if all the textfield has been written on if not error text
         boolean allFilled = true;
         for (int i = 0; i < inserts.length; i++) {
             if (inserts[i].equals("n")) {
@@ -68,14 +68,14 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
-    protected void onRegisterButtonClick(ActionEvent event) throws Exception {
+    protected void onRegisterButtonClick(ActionEvent event) throws Exception { //calls on stored procedure to start register new user
         String registerUser = ("{ CALL spRegisterUser(?, ?, ?, ?, ? ,?) }");
         String[] UserInfo = getUser();
         ResultSet resultSet;
         if (checkEmptyFields(UserInfo)) {
             Query query = new Query();
             String[] actualUserInfo = getUser();
-            try {
+            try { //A query for six which takes in all the new variables for the new user
                 query.querySix(registerUser, actualUserInfo[0], actualUserInfo[1], actualUserInfo[2], actualUserInfo[3], actualUserInfo[4], actualUserInfo[5]);
                 Stage stage = (Stage) registerButton.getScene().getWindow();
                 stage.close();
@@ -96,13 +96,13 @@ public class RegisterController implements Initializable {
 
     }
 
-    public String shortenToFirstLetter(String uType) {
+    public String shortenToFirstLetter(String uType) { //To get first variable in string to match with DB
     String stringToConvert = (String.valueOf(uTypeBox.getValue()));
     char userType = stringToConvert.charAt(0);
     return Character.toString(userType);
     }
 
-    public String[] getUser() {
+    public String[] getUser() { // Array for the new User using the Textfields input
         String[] inserts;
         String firstname = fNameField.getText();
         String lastname = lNameField.getText();
@@ -115,7 +115,7 @@ public class RegisterController implements Initializable {
         return inserts;
     }
 
-    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
+    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception { //When button pressed takes you to new scene
         Stage stage = (Stage) homeButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));

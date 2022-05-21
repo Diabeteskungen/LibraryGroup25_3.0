@@ -26,7 +26,7 @@ public class RemoveItemController {
     @FXML
     private Label removeSuccessMessage;
 
-    public void onHomeButtonPress(ActionEvent event) throws Exception {
+    public void onHomeButtonPress(ActionEvent event) throws Exception { // When button pressed takes you to new scene
         Stage stage = (Stage) homeButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpageAdmin.fxml"));
@@ -36,11 +36,11 @@ public class RemoveItemController {
         stage.show();
     }
 
-    public void onRemoveButtonPress(ActionEvent actionEvent) {
+    public void onRemoveButtonPress(ActionEvent actionEvent) { // A stored procedure to delete item
         Query query = new Query();
         String removeItem = "{ CALL spDeleteItem(?) }";
         try {
-            query.querySingle(removeItem, isbnField.getText());
+            query.querySingle(removeItem, isbnField.getText()); //takes in only the isbn number to know which object to delete in DB
             removeErrorMessage.setText("");
             removeSuccessMessage.setText("Item successfully removed!");
 

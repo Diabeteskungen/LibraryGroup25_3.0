@@ -29,7 +29,7 @@ public class LoginAdminController {
     @FXML
     private Button homeButton;
 
-    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
+    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception { //Our standard method for our home button
         Stage stage = (Stage) homeButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
@@ -40,19 +40,20 @@ public class LoginAdminController {
     }
 
     @FXML
-    protected void onLoginAdminClick(ActionEvent event) throws Exception {
+    protected void onLoginAdminClick(ActionEvent event) throws Exception { //Our method using queries to check the email and password from user with DB
         Query query = new Query();
         String checkPassword = ("{ CALL spCheckEmployeePassword(?, ?) }");
         String email = AdminEmailField.getText();
         String password = AdminPasswordField.getText();
         ResultSet resultSet;
         String pwdFromDB = null;
-        LoginErrorText.setText("Wrong email or password");
+        LoginErrorText.setText("Wrong email or password"); //Hidden text which comes out if the input doesnt match what is asked
 
         try {
-            resultSet = query.queryDouble(checkPassword, email, password);
+            resultSet = query.queryDouble(checkPassword, email, password); //starting our queries with right input
 
             while (resultSet.next()) {
+                //comparing the password with DB
 
                 resultSet.getString("pwd");
                 pwdFromDB = resultSet.getString("pwd");

@@ -36,7 +36,7 @@ public class LoginController {
     private TableView<Items> missingItemsList;
 
     @FXML
-    protected void onRegisterClick(ActionEvent event) throws Exception {
+    protected void onRegisterClick(ActionEvent event) throws Exception { //staring a new window when button pressed
         Stage stage = (Stage) buttonRegister.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("register.fxml"));
@@ -48,7 +48,7 @@ public class LoginController {
 
     }
 
-    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception {
+    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception { //staring a new window when button pressed
         Stage stage = (Stage) homeButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
@@ -59,7 +59,7 @@ public class LoginController {
     }
 
     @FXML
-    protected void onLoginClick(ActionEvent event) throws Exception {
+    protected void onLoginClick(ActionEvent event) throws Exception { // Same query as in login admin but for user
         Query query = new Query();
         String checkPassword = ("{ CALL spCheckPassword(?, ?) }");
         String username = UsernameField.getText();
@@ -71,7 +71,7 @@ public class LoginController {
         try {
             resultSet = query.queryDouble(checkPassword, username, password);
 
-            while (resultSet.next()) {
+            while (resultSet.next()) { //comparing input password with DB
 
 
                 resultSet.getString("pwd");

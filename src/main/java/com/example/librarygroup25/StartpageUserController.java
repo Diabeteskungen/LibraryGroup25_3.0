@@ -59,7 +59,7 @@ public class StartpageUserController implements Initializable {
     public static ObservableList<Items> itemsinDB = FXCollections.observableArrayList();
 
 
-    protected void search () throws Exception {
+    protected void search () throws Exception { // Exactly the same function as for admin controller but for user check LoginaAdminController for full information
 
         Query query = new Query();
         itemsinDB.clear();
@@ -106,13 +106,13 @@ public class StartpageUserController implements Initializable {
 
     }
 
-    public void searchbuttonaction(ActionEvent actionEvent) throws Exception {
+    public void searchbuttonaction(ActionEvent actionEvent) throws Exception { // makes button visibile and unvisible
         search();
         searchbutton.setVisible(false);
         backButton.setVisible(true);
 
     }
-    public void onActionLoanItem(ActionEvent actionEvent) throws Exception{
+    public void onActionLoanItem(ActionEvent actionEvent) throws Exception{ //When pressed takes you to new Stage
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loan.fxml"));
@@ -123,13 +123,13 @@ public class StartpageUserController implements Initializable {
 
     }
 
-    public void onBackButtonPress(ActionEvent actionEvent) throws Exception {
+    public void onBackButtonPress(ActionEvent actionEvent) throws Exception {// makes button visibile and unvisible
         backButton.setVisible(false);
         searchResult.setVisible(false);
         searchbutton.setVisible(true);
     }
 
-    public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {
+    public void onLogoutButtonPress(ActionEvent actionEvent) throws Exception {//When pressed takes you to new Stage
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
@@ -138,7 +138,7 @@ public class StartpageUserController implements Initializable {
         stage.setScene(new Scene(root1));
         stage.show();
     }
-    public void onReturnItemButtonPress(ActionEvent actionEvent) throws Exception {
+    public void onReturnItemButtonPress(ActionEvent actionEvent) throws Exception {//When pressed takes you to new Stage
         Stage stage = (Stage) returnItemButton.getScene().getWindow();
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("returnItem.fxml"));
