@@ -1,3 +1,6 @@
+/**
+ * @author  Lukas Simoni Olof Röjvall David Hägg
+ */
 package com.example.librarygroup25;
 
 public class Items {

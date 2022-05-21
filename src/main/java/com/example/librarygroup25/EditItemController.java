@@ -1,3 +1,6 @@
+/**
+ * @author  Lukas Simoni Olof Röjvall David Hägg
+ */
 package com.example.librarygroup25;
 
 import javafx.event.ActionEvent;
