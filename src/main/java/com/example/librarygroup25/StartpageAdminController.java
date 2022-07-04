@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 
 
-public class StartpageAdminController implements Initializable {
+public class StartpageAdminController extends StartpageController implements Initializable {
 
 
 

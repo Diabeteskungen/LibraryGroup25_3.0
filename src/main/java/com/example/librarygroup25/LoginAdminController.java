@@ -15,7 +15,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginAdminController {
+public class LoginAdminController extends LoginController {
 
     @FXML
     private TextField AdminEmailField;
@@ -32,18 +32,10 @@ public class LoginAdminController {
     @FXML
     private Button homeButton;
 
-    public void onHomeButtonPress(ActionEvent actionEvent) throws Exception { //Our standard method for our home button
-        Stage stage = (Stage) homeButton.getScene().getWindow();
-        stage.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("startpage.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        stage = new Stage();
-        stage.setScene(new Scene(root1));
-        stage.show();
-    }
+
 
     @FXML
-    protected void onLoginAdminClick(ActionEvent event) throws Exception { //Our method using queries to check the email and password from user with DB
+    protected void onLoginClick(ActionEvent event) throws Exception { //Our method using queries to check the email and password from user with DB
         Query query = new Query();
         String checkPassword = ("{ CALL spCheckEmployeePassword(?, ?) }");
         String email = AdminEmailField.getText();

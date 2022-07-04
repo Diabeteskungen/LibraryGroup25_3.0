@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class StartpageUserController implements Initializable {
+public class StartpageUserController extends StartpageController implements Initializable {
 
 
     @FXML

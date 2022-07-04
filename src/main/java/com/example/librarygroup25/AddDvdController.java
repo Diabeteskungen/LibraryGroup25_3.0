@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class AddDvdController {
+public class AddDvdController extends AddItem {
     //@FXML annotations
     @FXML
     private TextField ArtNmrfield;
@@ -36,22 +36,14 @@ public class AddDvdController {
     private TextField LocationField;
 
     @FXML
-    private Label addDvdErrorText;
+    private Label registrationError;
 
     @FXML
     private Button AddDvdButton;
 
-    //Boolean for information entry into the textfields
-    public boolean checkEmtyFields(String[] inserts) {
-        boolean allFilled = true;
-        for (int i = 0; i < inserts.length; i++) {
-            if (inserts[i].equals("n")) {
-                allFilled = false;
-                addDvdErrorText.setText("Please enter all the information for the DVD");
-            }
-        }
-        return allFilled;
-    }
+
+
+
     //on button press sp check and add dvd, check Query, new stage
     @FXML
     protected void onAddDvdButton(ActionEvent event) throws Exception {
